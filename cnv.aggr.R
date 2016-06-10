@@ -76,9 +76,7 @@ for (i in 1:nrow(patients)){
         col_counter = col_counter + 1
         print(paste("Getting copy number for", patients[i,1]))
         seg <- get_seg_loc(segfile)
-        print("seg loc found")
         cnv <- get_copy_number(loc, seg)
-        print("copy number found")
         all_cnv <- cbind(all_cnv, as.numeric(cnv))
         colnames(all_cnv)[col_counter] <- patients[i,1]
                 
